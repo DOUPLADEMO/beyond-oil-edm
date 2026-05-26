@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="hu">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Beyond Oil — Nyitószám · 2026. május</title>
+<title>Beyond Oil — Launch Issue · May 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500&display=swap" rel="stylesheet">
@@ -42,6 +42,8 @@
     overflow: hidden;
   }
   a { color: inherit; }
+
+  /* ---------- 1. Preheader ---------- */
   .preheader {
     background: var(--bg-darker);
     color: var(--muted-dark);
@@ -56,6 +58,8 @@
     display: inline-flex; align-items: center; gap: 6px;
   }
   .preheader .right:hover { color: #b6e07a; }
+
+  /* ---------- 2. Header ---------- */
   .header {
     background: var(--bg-dark);
     color: white;
@@ -126,6 +130,8 @@
     align-items: center;
   }
   .meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted-darker); display: inline-block; }
+
+  /* ---------- 3. Rafi video section ---------- */
   .rafi {
     background: var(--bg-dark);
     color: white;
@@ -226,6 +232,8 @@
     color: var(--lime);
     background: transparent;
   }
+
+  /* ---------- 4. Product section ---------- */
   .product {
     display: grid;
     grid-template-columns: 52% 48%;
@@ -265,6 +273,8 @@
     -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/contain no-repeat;
             mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/contain no-repeat;
   }
+
+  /* ---------- 5. Stats ---------- */
   .stats {
     background: var(--green);
     display: grid;
@@ -292,6 +302,8 @@
     color: rgba(10,31,18,0.78);
     line-height: 1.4;
   }
+
+  /* ---------- 6. Testimonials ---------- */
   .testi {
     background: white;
     padding: 56px 40px;
@@ -321,6 +333,7 @@
     letter-spacing: -0.015em;
     line-height: 1.05;
   }
+
   .testi-grid {
     margin-top: 28px;
     display: grid;
@@ -385,6 +398,8 @@
     color: var(--muted-light);
     text-align: center;
   }
+
+  /* ---------- 7. Science ---------- */
   .science {
     background: var(--bg-dark);
     color: white;
@@ -473,6 +488,8 @@
     text-transform: uppercase;
     color: var(--muted-darker);
   }
+
+  /* ---------- 8. CTA ---------- */
   .cta {
     background: var(--offwhite);
     padding: 64px 40px;
@@ -532,6 +549,8 @@
     color: var(--muted-light);
     max-width: 50ch;
   }
+
+  /* ---------- 9. Next issue ---------- */
   .next {
     background: white;
     border-top: 1px solid var(--hairline-light);
@@ -597,6 +616,8 @@
     padding: 6px 10px;
     border-radius: 6px;
   }
+
+  /* ---------- 10. Footer ---------- */
   .footer {
     background: var(--bg-dark);
     color: var(--muted-dark);
@@ -632,6 +653,7 @@
   .footer-bottom a { color: var(--muted-darker); text-decoration: none; }
   .footer-bottom a:hover { color: var(--lime); }
 
+  /* ---------- Responsive ---------- */
   @media (max-width: 600px) {
     body { padding: 12px 0 32px; }
     .preheader { padding: 12px 20px; font-size: 10px; }
@@ -666,7 +688,7 @@
 
     <!-- 1. Preheader -->
     <div class="preheader">
-      <span>Hírlevél #1 · 2026. május</span>
+      <span>Newsletter #1 · May 2026</span>
       <a class="right" href="#">thinkbeyond.hu <span aria-hidden="true">↗</span></a>
     </div>
 
@@ -674,20 +696,20 @@
     <header class="header">
       <div class="header-top">
         <img class="logo" src="assets/logo-white.png" alt="Beyond Oil" />
-        <span class="pill-launch">Nyitószám</span>
+        <span class="pill-launch">Launch Issue</span>
       </div>
       <div class="header-body">
-        <p class="eyebrow">Beyond Oil Hungary · Első hírlevél</p>
+        <p class="eyebrow">Beyond Oil Hungary · First Newsletter</p>
         <h1 class="headline">
-          Megjöttünk.
-          <span class="alt">A probléma nem ma kezdődött.</span>
+          We're here.
+          <span class="alt">And so is the problem.</span>
         </h1>
         <div class="meta">
-          <span>2026. május 7.</span>
+          <span>May 7, 2026</span>
           <span class="dot"></span>
-          <span>Havonta</span>
+          <span>Monthly</span>
           <span class="dot"></span>
-          <span>Minden hónap első csütörtökén</span>
+          <span>First Thursday</span>
           <span class="dot"></span>
           <span>HoReCa Hungary</span>
         </div>
@@ -696,24 +718,25 @@
 
     <!-- 3. Rafi video -->
     <section class="rafi">
-      <div class="video-frame" role="button" tabindex="0" aria-label="Rafi Orel bevezető videójának lejátszása">
-        <button class="play-btn" aria-label="Videó lejátszása">
+      <div class="video-frame" role="button" tabindex="0" aria-label="Play introduction video by Rafi Orel">
+        <button class="play-btn" aria-label="Play video">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         </button>
-        <span class="video-label">Rafi Orel · Ügyvezető igazgató</span>
+        <span class="video-label">Rafi Orel · Managing Director</span>
         <span class="duration">2:14</span>
       </div>
       <div class="rafi-info">
         <p class="rafi-name">Rafi Orel</p>
-        <p class="rafi-role">Ügyvezető igazgató, ThinkBeyond Hungary</p>
+        <p class="rafi-role">Managing Director, ThinkBeyond Hungary</p>
         <p class="rafi-text">
-          Üdvözöljük az első számban. A Beyond Oil Hungary azért indult el, mert Budapest, Debrecen
-          és Szeged legjobb konyhái észrevétlenül veszítik a pénzüket és a minőségüket — ugyanattól
-          a problémától: az olajtól, amely túl gyorsan öregszik.
+          Welcome to the first issue. We started Beyond Oil Hungary because the kitchens we love most
+          in Budapest, Debrecen and Szeged were quietly losing money — and quality — to the same
+          invisible problem: oil that ages too fast.
         </p>
         <p class="rafi-text">
-          Havonta egyszer, röviden: ami működik a valódi konyhákban, amit a tudomány mond, és ami
-          a SIRHA-n és az Internorgán várható. Semmi fölösleges. Csak ami az Ön konyhájában számít.
+          Each month we'll send one short brief. What's working in real kitchens, what the science
+          says, and what's coming up at SIRHA and Internorga. No noise. Just the parts that matter
+          to your line.
         </p>
         <div class="chip-row">
           <span class="chip chip-light">
@@ -722,149 +745,150 @@
           <span class="chip chip-light">
             <span class="ph"><span class="dot" style="background:#e63946"></span>Internorga</span>
           </span>
-          <span class="chip chip-outline">Hírlevél #1 · 2026. május</span>
+          <span class="chip chip-outline">Newsletter #1 · May 2026</span>
         </div>
       </div>
     </section>
 
     <!-- 4. Product section -->
     <section class="product">
-      <div class="img" role="img" aria-label="Beyond Oil szűrőpor csomagolása rozsdamentes konyhai pulton"></div>
+      <div class="img" role="img" aria-label="Beyond Oil Filter Powder pack on a stainless kitchen counter"></div>
       <div class="copy">
-        <p class="eyebrow">A termék</p>
+        <p class="eyebrow">The Product</p>
         <h2>Beyond Oil Filter Powder</h2>
-        <p class="sub">Sütőolajhoz · Élelmiszer-minőségű · 250 g</p>
+        <p class="sub">For frying oil · Food Grade · 250g</p>
         <ul class="bullets">
-          <li>Az olaj élettartamát akár 3-szorosára nyújtja</li>
-          <li>Csökkenti a polár vegyületek szintjét</li>
-          <li>FDA · NSF · Health Canada tanúsítvánnyal</li>
+          <li>Extends oil life up to 3×</li>
+          <li>Reduces polar compounds</li>
+          <li>FDA · NSF · Health Canada certified</li>
         </ul>
       </div>
     </section>
 
     <!-- 5. Stats -->
-    <section class="stats" aria-label="Kulcsszámok">
-      <div class="stat"><div class="num">12</div><div class="lbl">Aktív partner Magyarországon</div></div>
-      <div class="stat"><div class="num">~46%</div><div class="lbl">Átlagos olajköltség-csökkentés</div></div>
-      <div class="stat"><div class="num">3×</div><div class="lbl">Ritkább olajcsere</div></div>
-      <div class="stat"><div class="num">30</div><div class="lbl">Napos kockázatmentes pilot</div></div>
+    <section class="stats" aria-label="Key numbers">
+      <div class="stat"><div class="num">12</div><div class="lbl">Active partners in Hungary</div></div>
+      <div class="stat"><div class="num">~46%</div><div class="lbl">Avg. oil cost reduction</div></div>
+      <div class="stat"><div class="num">3×</div><div class="lbl">Longer oil change interval</div></div>
+      <div class="stat"><div class="num">30</div><div class="lbl">Day risk-free pilot</div></div>
     </section>
 
     <!-- 6. Testimonials -->
     <section class="testi">
       <div class="testi-hero">
         <div class="testi-hero-text">
-          <p class="eyebrow">A terepről</p>
-          <h2>Két konyha. Ahogy ők mondják.</h2>
+          <p class="eyebrow">From the field</p>
+          <h2>Two kitchens. Their words.</h2>
         </div>
       </div>
       <div class="testi-grid">
         <article class="testi-card">
-          <div class="stars" aria-label="5 csillagból 5">★★★★★</div>
-          <p class="quote">„Tisztább konyha. A személyzet is észrevette az első héten."</p>
+          <div class="stars" aria-label="5 out of 5">★★★★★</div>
+          <p class="quote">"Tisztább konyha. A személyzet is észrevette az első héten."</p>
           <p class="detail">
-            A fritőz nyugodtabban dolgozott, az olaj pénteki zárásig megőrizte a tisztaságát.
-            A csapatnak nem kellett mondani — maguktól szóltak.
+            "Cleaner kitchen. The team noticed within the first week. The fryer ran calmer and the
+            oil stayed bright through Friday service."
           </p>
           <div class="testi-foot">
             <div class="avatar" aria-hidden="true">ZK</div>
             <div class="who">
-              <div class="n">Kovács Zoltán</div>
-              <div class="r">Séfvezető · Bistro III. kerület</div>
+              <div class="n">Zoltán Kovács</div>
+              <div class="r">Head Chef · Bistro 3rd District</div>
             </div>
-            <span class="verified">Igazolt pilot</span>
+            <span class="verified">Verified pilot</span>
           </div>
         </article>
         <article class="testi-card">
-          <div class="stars" aria-label="5 csillagból 5">★★★★★</div>
-          <p class="quote">„Ropogósabb ételek, nincs égett utóíz."</p>
+          <div class="stars" aria-label="5 out of 5">★★★★★</div>
+          <p class="quote">"Ropogósabb ételek, nincs égett utóíz."</p>
           <p class="detail">
-            Ebben a hónapban kevesebb mint feleannyiszor cseréltünk olajat.
-            A terítékenkénti olajköltségünk érezhetően csökkent.
+            "Crispier food, no burnt aftertaste. We changed oil less than half as often this month —
+            our cost per cover dropped noticeably."
           </p>
           <div class="testi-foot">
             <div class="avatar" aria-hidden="true">EH</div>
             <div class="who">
-              <div class="n">Horváth Eszter</div>
-              <div class="r">Tulajdonos · Halászkert Szeged</div>
+              <div class="n">Eszter Horváth</div>
+              <div class="r">Owner · Halászkert Szeged</div>
             </div>
-            <span class="verified">Igazolt pilot</span>
+            <span class="verified">Verified pilot</span>
           </div>
         </article>
       </div>
-      <p class="testi-note">Szerepelne a következő számban? Válaszoljon erre az e-mailre.</p>
+      <p class="testi-note">Want to be featured next month? Reply to this email.</p>
     </section>
 
     <!-- 7. Science -->
     <section class="science">
-      <p class="eyebrow">Kutatás</p>
-      <h2>Mit mond a tudomány a sütőolajról</h2>
+      <p class="eyebrow">Research</p>
+      <h2>What the science says about frying oil</h2>
       <p>
-        Az ismételten felmelegített sütőolajban <em>polár vegyületek</em> halmozódnak fel — az oxidáció
-        kémiai jele. A legtöbb európai szabályozó 24%-os TPC-határt szab: ennél az értéknél minősül az
-        olaj alkalmatlannak élelmiszer-előkészítésre.
+        Frying oil that's heated and reheated builds up <em>polar compounds</em> — the chemical
+        signature of oxidation. Most regulators across Europe set a hard ceiling around 24% TPC,
+        the point at which oil is considered unfit for food preparation.
       </p>
       <p>
-        E határon túl <em>aldehidek</em> is megjelennek az olajban — köztük a 4-HNE —, amelyeket
-        lektorált kutatások oxidatív stresszel és krónikus gyulladással hoznak összefüggésbe.
-        Ez nem csupán minőségi, hanem egészségügyi kérdés is.
+        Past that ceiling, repeatedly heated oil also accumulates <em>aldehydes</em>, including
+        4-HNE, which are linked in peer-reviewed work to oxidative stress and chronic inflammation.
+        It's not just a quality problem — it's a health problem.
       </p>
       <div class="callout">
-        <p>„A Beyond Oil alkalmazásával a biztonságos polár-vegyületi tartomány közel négyszeresére
-        bővül — az olaj jóval hosszabb ideig marad a hatósági határérték alatt, ugyanabban a fritőzben."</p>
+        <p>"With Beyond Oil, the safe polar-compound range is extended roughly 4× — meaning oil
+        stays well below regulatory thresholds far longer in the same fryer."</p>
       </div>
       <p>
-        Az eredményt a vendégek érzik: ropogósabb étel, világosabb szín, tisztább utóíz.
-        A konyha oldalán: ritkább olajcsere, kevesebb füst, mérhetően jobb levegő a személyzetnek.
+        The result downstream is what your guests actually taste: crispier food, lighter color,
+        a cleaner finish. The result upstream is fewer oil changes, less smoke, and measurably
+        better air for the people on the line.
       </p>
       <div class="profs">
         <div class="prof">
           <div class="ava">OF</div>
           <div class="nm">Prof. Oren Fruchter</div>
-          <div class="ins">Wolfson Orvosi Központ</div>
+          <div class="ins">Wolfson Medical Center</div>
         </div>
         <div class="prof">
           <div class="ava">NG</div>
           <div class="nm">Prof. Nissim Garti</div>
-          <div class="ins">Héber Egyetem, Jeruzsálem</div>
+          <div class="ins">Hebrew University, Jerusalem</div>
         </div>
         <div class="prof">
           <div class="ava">SH</div>
           <div class="nm">Prof. Sarel Halahmi</div>
-          <div class="ins">Bnei Zion Orvosi Központ</div>
+          <div class="ins">Bnei Zion Medical Center</div>
         </div>
       </div>
-      <p class="src">Forrás: lektorált szakirodalom · Beyond Oil tudományos tanácsadó testület</p>
+      <p class="src">Sources: peer-reviewed literature · Beyond Oil scientific advisory board</p>
     </section>
 
     <!-- 8. CTA -->
     <section class="cta">
-      <p class="eyebrow">Próbálja ki a saját konyhájában</p>
-      <h2>Mérje meg, mit csinál az olajával.</h2>
+      <p class="eyebrow">Try it on your line</p>
+      <h2>See what it does in your kitchen.</h2>
       <p class="sub">
-        30 napos, kockázatmentes pilot. Mi szállítunk, betanítjuk a csapatát, és közösen mérjük
-        az eredményeket — az olaj aktív napjait, a TPC-értéket, a terítékenkénti olajköltséget.
+        A 30-day, zero-risk pilot. We deliver, train your team, and measure the numbers with you —
+        oil days, polar compounds, cost per cover.
       </p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="#">Kérem a 30 napos pilotot →</a>
-        <a class="btn btn-outline" href="#">Bővebben</a>
+        <a class="btn btn-primary" href="#">Request a 30-day pilot →</a>
+        <a class="btn btn-outline" href="#">Learn more</a>
       </div>
-      <p class="cta-note">Kockázatmentes. Ha nem lát mérhető megtakarítást, nem folytatja.</p>
+      <p class="cta-note">Zero risk. If you don't see measurable savings, you don't continue.</p>
     </section>
 
     <!-- 9. Next issue -->
     <section class="next">
-      <div class="next-label">A következő számban</div>
+      <div class="next-label">Coming next month</div>
       <div class="next-row">
         <div class="next-date">
-          <div class="m">Jún. 4.</div>
+          <div class="m">Jun 4</div>
           <div class="y">2026</div>
         </div>
         <div class="vrule"></div>
         <div class="next-body">
-          <p class="t">Nyári csúcsidény-szám</p>
-          <p class="d">Terasz-szezon, csúcsidei fritőzterhelés és egy nyomtatható ROI-kalkulátor,
-            amelyet 10 perc alatt lefuttathat a pénzügyi felelőssel.</p>
+          <p class="t">Summer Peak Ops Issue</p>
+          <p class="d">Terrace season, fryer load curves, and a printable ROI calculator
+            you can run with your finance lead in 10 minutes.</p>
         </div>
         <span class="tag-roi">ROI</span>
       </div>
@@ -874,16 +898,16 @@
     <footer class="footer">
       <img class="logo" src="assets/logo-white.png" alt="Beyond Oil" />
       <div class="footer-links">
-        <a href="#">Weboldal</a>
+        <a href="#">Website</a>
         <a href="#">LinkedIn</a>
-        <a href="#">Kapcsolat</a>
-        <a href="#">Sajtó</a>
+        <a href="#">Contact</a>
+        <a href="#">Press</a>
       </div>
       <hr />
       <div class="footer-bottom">
-        <div>© 2026 ThinkBeyond Hungary / Beyond Oil.<br/>Kezeli: DOUPLA Creative &amp; Digital.</div>
+        <div>© 2026 ThinkBeyond Hungary / Beyond Oil.<br/>Managed by DOUPLA Creative &amp; Digital.</div>
         <div class="right">
-          <a href="#">Leiratkozás</a> · <a href="#">Adatvédelmi irányelvek</a>
+          <a href="#">Unsubscribe</a> · <a href="#">Privacy Policy</a>
         </div>
       </div>
     </footer>
