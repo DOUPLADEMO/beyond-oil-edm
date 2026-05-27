@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Beyond Oil Hírlevél – Szerkesztő</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500&display=swap" rel="stylesheet">
+
+<style id="newsletter-styles">
+  :root {
+    --bg-dark: #0D2218;
+    --bg-darker: #081510;
+    --bg-dark-2: #163527;
+    --green: #4CAF50;
+    --lime: #8BC34A;
+    --offwhite: #F3F8F0;
+    --paper: #ffffff;
+    --ink: #0D2218;
+    --muted-dark: rgba(243,248,240,0.72);
+    --muted-darker: rgba(243,248,240,0.55);
+    --muted-light: #5b6a62;
+    --hairline-dark: rgba(243,248,240,0.10);
+    --hairline-light: #e6ece5;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #e9ede6;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body { padding: 32px 16px 96px; }
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    background: var(--paper);
+    box-shadow: 0 30px 80px -40px rgba(13,34,24,0.35), 0 4px 16px -8px rgba(13,34,24,0.15);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  a { color: inherit; }
+  .preheader {
+    background: var(--bg-darker);
+    color: var(--muted-dark);
+    padding: 12px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    font-weight: 500;
+  }
+  .preheader .right {
+    color: var(--lime);
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .preheader .right:hover { color: #b6e07a; }
+  .header {
+    background: var(--bg-dark);
+    color: white;
+    padding: 28px 40px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(60% 60% at 90% 0%, rgba(139,195,74,0.12), transparent 70%),
+      radial-gradient(40% 40% at 0% 100%, rgba(76,175,80,0.10), transparent 70%);
+    pointer-events: none;
+  }
+  .header-top {
+    display: flex; align-items: center; justify-content: space-between;
+    position: relative; z-index: 1;
+  }
+  .header-top img.logo { height: 48px; width: auto; display: block; }
+  .pill-launch {
+    background: var(--green);
+    color: #0a1f12;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border-radius: 999px;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .pill-launch::before {
+    content: "";
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #0a1f12;
+    box-shadow: 0 0 0 3px rgba(10,31,18,0.15);
+  }
+  .header-body { position: relative; z-index: 1; margin-top: 44px; }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--lime);
+    font-weight: 600;
+    margin: 0 0 18px;
+  }
+  .headline {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 56px;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+  }
+  .headline .alt {
+    display: block;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--lime);
+    margin-top: 4px;
+  }
+  .meta {
+    margin-top: 24px;
+    font-size: 13px;
+    color: var(--muted-dark);
+    display: flex; flex-wrap: wrap; gap: 6px 12px;
+    align-items: center;
+  }
+  .meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted-darker); display: inline-block; }
+  .rafi {
+    background: var(--bg-dark);
+    color: white;
+    padding: 0 40px 56px;
+  }
+  .video-frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+    background: radial-gradient(120% 80% at 50% 50%, #1d4730 0%, #0e2719 70%, #081510 100%);
+    border: 1px solid rgba(139,195,74,0.18);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .video-frame::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(115deg, rgba(255,255,255,0.018) 0 2px, transparent 2px 7px);
+    pointer-events: none;
+  }
+  .play-btn {
+    width: 76px; height: 76px;
+    border-radius: 50%;
+    background: var(--lime);
+    color: #0a1f12;
+    border: none;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 18px 40px -12px rgba(139,195,74,0.55), 0 0 0 8px rgba(139,195,74,0.15);
+    transition: transform .25s ease, box-shadow .25s ease;
+    position: relative; z-index: 1;
+  }
+  .play-btn:hover { transform: scale(1.05); }
+  .play-btn svg { margin-left: 4px; }
+  .video-label {
+    position: absolute;
+    bottom: 16px; left: 18px;
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted-dark);
+    background: rgba(8,21,16,0.55);
+    backdrop-filter: blur(6px);
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--hairline-dark);
+  }
+  .duration {
+    position: absolute;
+    top: 16px; right: 16px;
+    font-size: 11px; letter-spacing: 0.08em;
+    color: white;
+    background: rgba(8,21,16,0.65);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-variant-numeric: tabular-nums;
+  }
+  .rafi-info { margin-top: 28px; }
+  .rafi-name { font-size: 18px; font-weight: 700; color: white; margin: 0; letter-spacing: -0.01em; }
+  .rafi-role { font-size: 13px; color: var(--muted-darker); margin: 4px 0 0; }
+  .rafi-text { margin-top: 20px; font-size: 15px; line-height: 1.65; color: var(--muted-dark); }
+  .rafi-text + .rafi-text { margin-top: 12px; }
+  .chip-row { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .chip {
+    height: 36px; border-radius: 999px; padding: 0 16px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600;
+  }
+  .chip-light { background: white; color: #0a1f12; box-shadow: 0 2px 0 rgba(0,0,0,0.08); }
+  .chip-light .ph { display: inline-flex; align-items: center; gap: 8px; }
+  .chip-light .ph .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+  .chip-outline { border: 1px solid rgba(139,195,74,0.5); color: var(--lime); background: transparent; }
+  .product { display: grid; grid-template-columns: 52% 48%; min-height: 320px; }
+  .product .img { background: #0a1f12 url('assets/product-pack.png') center / cover no-repeat; }
+  .product .copy {
+    background: var(--bg-dark-2); color: white; padding: 40px 36px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .product .copy .eyebrow { color: var(--lime); margin-bottom: 14px; }
+  .product h2 { font-size: 30px; line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 8px; font-weight: 700; }
+  .product .sub { font-size: 13px; color: var(--muted-dark); margin: 0 0 20px; }
+  .bullets { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .bullets li {
+    font-size: 14px; color: rgba(255,255,255,0.92);
+    display: flex; gap: 10px; align-items: flex-start; line-height: 1.45;
+  }
+  .bullets li::before {
+    content: "";
+    width: 14px; height: 14px; flex: none; margin-top: 4px;
+    background: var(--lime);
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/contain no-repeat;
+            mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/contain no-repeat;
+  }
+  .stats { background: var(--green); display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat {
+    padding: 32px 18px; text-align: center; color: #0a1f12;
+    border-right: 1px solid rgba(10,31,18,0.16);
+  }
+  .stat:last-child { border-right: none; }
+  .stat .num { font-size: 38px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
+  .stat .lbl { margin-top: 10px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: rgba(10,31,18,0.78); line-height: 1.4; }
+  .testi { background: white; padding: 56px 40px; }
+  .testi-hero {
+    position: relative; height: 220px; border-radius: 14px; overflow: hidden;
+    background: #0a1f12 url('assets/rating-stars.png') center / cover no-repeat;
+  }
+  .testi-hero::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(13,34,24,0.92) 0%, rgba(13,34,24,0.78) 35%, rgba(13,34,24,0.0) 70%);
+  }
+  .testi-hero-text { position: absolute; bottom: 22px; left: 24px; right: 24px; color: white; }
+  .testi-hero-text .eyebrow { color: var(--lime); margin-bottom: 8px; }
+  .testi-hero-text h2 { margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.05; }
+  .testi-grid { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .testi-card {
+    background: var(--offwhite); border-left: 3px solid var(--green);
+    padding: 22px 22px 20px; border-radius: 0 10px 10px 0;
+    display: flex; flex-direction: column;
+  }
+  .stars { color: #f5b301; letter-spacing: 1px; font-size: 14px; }
+  .quote { font-style: italic; font-size: 18px; line-height: 1.4; margin: 12px 0 10px; color: var(--ink); letter-spacing: -0.005em; }
+  .detail { font-size: 13px; color: var(--muted-light); line-height: 1.55; margin: 0 0 18px; }
+  .testi-foot { margin-top: auto; display: flex; align-items: center; gap: 12px; }
+  .avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: linear-gradient(135deg, #cfe5b8, #88a972);
+    flex: none; display: flex; align-items: center; justify-content: center;
+    color: #0a1f12; font-weight: 700; font-size: 13px;
+  }
+  .testi-foot .who { line-height: 1.25; }
+  .testi-foot .who .n { font-size: 13px; font-weight: 600; }
+  .testi-foot .who .r { font-size: 12px; color: var(--muted-light); }
+  .verified {
+    margin-left: auto; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    font-weight: 600; color: var(--green); background: rgba(76,175,80,0.10);
+    padding: 5px 9px; border-radius: 999px;
+  }
+  .testi-note { margin-top: 22px; font-size: 13px; font-style: italic; color: var(--muted-light); text-align: center; }
+  .science { background: var(--bg-dark); color: white; padding: 64px 40px; position: relative; overflow: hidden; }
+  .science::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: url('assets/oil-bg.jpeg');
+    background-size: cover; background-position: center; opacity: 0.18; mix-blend-mode: screen;
+  }
+  .science > * { position: relative; z-index: 1; }
+  .science h2 { margin: 0 0 24px; font-size: 32px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.1; max-width: 28ch; }
+  .science p { font-size: 15px; line-height: 1.7; color: var(--muted-dark); margin: 0 0 14px; }
+  .callout { margin: 22px 0; padding: 20px 22px; border-left: 3px solid var(--lime); background: rgba(139,195,74,0.06); border-radius: 0 10px 10px 0; }
+  .callout p { margin: 0; color: var(--lime); font-style: italic; font-size: 16px; line-height: 1.5; }
+  .profs { margin-top: 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .prof { background: rgba(255,255,255,0.025); border: 1px solid var(--hairline-dark); border-radius: 12px; padding: 18px 16px; text-align: center; }
+  .prof .ava {
+    width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 12px;
+    background: linear-gradient(135deg, #2c5a3e, #1a3927);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--lime); font-weight: 700; font-size: 18px;
+    border: 1px solid rgba(139,195,74,0.3);
+  }
+  .prof .nm { font-size: 13px; font-weight: 600; color: white; line-height: 1.3; }
+  .prof .ins { margin-top: 4px; font-size: 11px; color: var(--muted-darker); line-height: 1.4; }
+  .src { margin-top: 22px; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-darker); }
+  .cta { background: var(--offwhite); padding: 64px 40px; text-align: center; }
+  .cta .eyebrow { color: var(--green); }
+  .cta h2 { margin: 14px 0 12px; font-size: 36px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; color: var(--ink); }
+  .cta .sub { font-size: 15px; color: var(--muted-light); line-height: 1.55; margin: 0 auto 28px; max-width: 44ch; }
+  .btn-row { display: inline-flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 14px 22px; border-radius: 10px; font-size: 14px; font-weight: 600;
+    letter-spacing: 0.01em; cursor: pointer;
+    transition: transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    text-decoration: none; border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--green); color: #0a1f12; }
+  .btn-primary:hover { background: #3f9943; transform: translateY(-1px); }
+  .btn-outline { background: transparent; color: var(--ink); border-color: rgba(13,34,24,0.2); }
+  .btn-outline:hover { border-color: var(--green); color: var(--green); }
+  .cta-note { margin: 20px auto 0; font-size: 12px; color: var(--muted-light); max-width: 50ch; }
+  .next { background: white; border-top: 1px solid var(--hairline-light); padding: 28px 40px; }
+  .next-label { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: var(--muted-light); margin-bottom: 14px; }
+  .next-row { display: flex; align-items: center; gap: 22px; }
+  .next-date { flex: none; text-align: center; line-height: 1; }
+  .next-date .m { font-size: 36px; font-weight: 700; color: var(--green); letter-spacing: -0.02em; }
+  .next-date .y { margin-top: 4px; font-size: 11px; color: var(--muted-light); letter-spacing: 0.1em; }
+  .vrule { width: 1px; align-self: stretch; background: var(--hairline-light); }
+  .next-body { flex: 1; }
+  .next-body .t { font-size: 16px; font-weight: 600; color: var(--ink); margin: 0 0 4px; }
+  .next-body .d { font-size: 13px; color: var(--muted-light); line-height: 1.5; margin: 0; }
+  .tag-roi { flex: none; align-self: flex-start; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--green); background: rgba(76,175,80,0.10); padding: 6px 10px; border-radius: 6px; }
+  .footer { background: var(--bg-dark); color: var(--muted-dark); padding: 40px 40px 32px; }
+  .footer img.logo { height: 48px; width: auto; display: block; }
+  .footer-links { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 18px; }
+  .footer-links a { color: var(--muted-dark); text-decoration: none; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; }
+  .footer-links a:hover { color: var(--lime); }
+  .footer hr { margin: 22px 0 18px; border: 0; height: 1px; background: var(--hairline-dark); }
+  .footer-bottom { display: flex; justify-content: space-between; gap: 16px; font-size: 11px; color: var(--muted-darker); line-height: 1.6; }
+  .footer-bottom .right { text-align: right; }
+  .footer-bottom a { color: var(--muted-darker); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--lime); }
+
+  @media (max-width: 600px) {
+    body { padding: 12px 0 80px; }
+    .preheader { padding: 12px 20px; font-size: 10px; }
+    .header, .rafi, .testi, .science, .cta, .next, .footer { padding-left: 20px; padding-right: 20px; }
+    .header { padding-top: 22px; padding-bottom: 40px; }
+    .headline { font-size: 40px; }
+    .product { grid-template-columns: 1fr; }
+    .product .img { min-height: 240px; }
+    .product .copy { padding: 28px 20px; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stat { border-right: none; border-bottom: 1px solid rgba(10,31,18,0.16); }
+    .stat:nth-child(2) { border-right: none; }
+    .stat:nth-last-child(-n+2) { border-bottom: none; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .testi-hero { height: 200px; }
+    .testi-hero-text h2 { font-size: 24px; }
+    .profs { grid-template-columns: 1fr; }
+    .science h2 { font-size: 26px; }
+    .cta h2 { font-size: 28px; }
+    .btn-row { display: flex; flex-direction: column; width: 100%; }
+    .btn-outline { width: 100%; }
+    .next-row { gap: 14px; }
+    .next-date .m { font-size: 28px; }
+    .footer-bottom { flex-direction: column; }
+    .footer-bottom .right { text-align: left; }
+    .chip-row { gap: 8px; }
+  }
+</style>
+
+<!-- Editor styles injected separately so they're easy to strip on save -->
+<style id="editor-styles">
+  [contenteditable] {
+    outline: none;
+    cursor: text;
+    transition: box-shadow 0.15s ease;
+    border-radius: 3px;
+  }
+  [contenteditable]:hover {
+    box-shadow: 0 0 0 2px rgba(139,195,74,0.4);
+  }
+  [contenteditable]:focus {
+    box-shadow: 0 0 0 2px #8BC34A;
+  }
+
+  /* Editor bar */
+  #editor-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 9999;
+    background: #0D2218;
+    border-top: 1px solid rgba(139,195,74,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    gap: 16px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  #editor-bar .bar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: rgba(243,248,240,0.6);
+    letter-spacing: 0.04em;
+  }
+  #editor-bar .bar-left .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #8BC34A;
+    box-shadow: 0 0 0 3px rgba(139,195,74,0.2);
+    flex: none;
+  }
+  #editor-bar .bar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  #editor-bar .btn-save {
+    background: #4CAF50;
+    color: #0a1f12;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    letter-spacing: 0.01em;
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+  #editor-bar .btn-save:hover { background: #3f9943; transform: translateY(-1px); }
+  #editor-bar .btn-save:active { transform: translateY(0); }
+  #editor-bar .btn-reset {
+    background: transparent;
+    color: rgba(243,248,240,0.45);
+    border: 1px solid rgba(243,248,240,0.12);
+    border-radius: 8px;
+    padding: 9px 16px;
+    font-size: 12px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #editor-bar .btn-reset:hover { color: rgba(243,248,240,0.75); border-color: rgba(243,248,240,0.25); }
+  #editor-bar .saved-badge {
+    font-size: 12px;
+    color: #8BC34A;
+    letter-spacing: 0.04em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  #editor-bar .saved-badge.visible { opacity: 1; }
+</style>
+</head>
+<body>
+
+<!-- ===================== NEWSLETTER ===================== -->
+<main class="wrap" id="newsletter">
+
+  <div class="preheader">
+    <span>Hírlevél #1 · 2026. május</span>
+    <a class="right" href="#">thinkbeyond.hu <span aria-hidden="true">↗</span></a>
+  </div>
+
+  <header class="header">
+    <div class="header-top">
+      <img class="logo" src="assets/logo-white.png" alt="Beyond Oil" />
+      <span class="pill-launch">Nyitószám</span>
+    </div>
+    <div class="header-body">
+      <p class="eyebrow">Beyond Oil Hungary · Első hírlevél</p>
+      <h1 class="headline">
+        Megjöttünk.
+        <span class="alt">A probléma nem ma kezdődött.</span>
+      </h1>
+      <div class="meta">
+        <span>2026. május 7.</span>
+        <span class="dot"></span>
+        <span>Havonta</span>
+        <span class="dot"></span>
+        <span>Minden hónap első csütörtökén</span>
+        <span class="dot"></span>
+        <span>HoReCa Hungary</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="rafi">
+    <div class="video-frame" role="img">
+      <button class="play-btn" aria-label="Videó lejátszása">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <span class="video-label">Rafi Orel · Ügyvezető igazgató</span>
+      <span class="duration">2:14</span>
+    </div>
+    <div class="rafi-info">
+      <p class="rafi-name">Rafi Orel</p>
+      <p class="rafi-role">Ügyvezető igazgató, ThinkBeyond Hungary</p>
+      <p class="rafi-text">
+        Üdvözöljük az első számban. A Beyond Oil Hungary azért indult el, mert Budapest, Debrecen
+        és Szeged legjobb konyhái észrevétlenül veszítik a pénzüket és a minőségüket — ugyanattól
+        a problémától: az olajtól, amely túl gyorsan öregszik.
+      </p>
+      <p class="rafi-text">
+        Havonta egyszer, röviden: ami működik a valódi konyhákban, amit a tudomány mond, és ami
+        a SIRHA-n és az Internorgán várható. Semmi fölösleges. Csak ami az Ön konyhájában számít.
+      </p>
+      <div class="chip-row">
+        <span class="chip chip-light"><span class="ph"><span class="dot"></span>SIRHA Budapest</span></span>
+        <span class="chip chip-light"><span class="ph"><span class="dot" style="background:#e63946"></span>Internorga</span></span>
+        <span class="chip chip-outline">Hírlevél #1 · 2026. május</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="product">
+    <div class="img" role="img" aria-label="Beyond Oil szűrőpor csomagolása rozsdamentes konyhai pulton"></div>
+    <div class="copy">
+      <p class="eyebrow">A termék</p>
+      <h2>Beyond Oil Filter Powder</h2>
+      <p class="sub">Sütőolajhoz · Élelmiszer-minőségű · 250 g</p>
+      <ul class="bullets">
+        <li>Az olaj élettartamát akár 3-szorosára nyújtja</li>
+        <li>Csökkenti a polár vegyületek szintjét</li>
+        <li>FDA · NSF · Health Canada tanúsítvánnyal</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="stats" aria-label="Kulcsszámok">
+    <div class="stat"><div class="num">12</div><div class="lbl">Aktív partner Magyarországon</div></div>
+    <div class="stat"><div class="num">~46%</div><div class="lbl">Átlagos olajköltség-csökkentés</div></div>
+    <div class="stat"><div class="num">3×</div><div class="lbl">Ritkább olajcsere</div></div>
+    <div class="stat"><div class="num">30</div><div class="lbl">Napos kockázatmentes pilot</div></div>
+  </section>
+
+  <section class="testi">
+    <div class="testi-hero">
+      <div class="testi-hero-text">
+        <p class="eyebrow">A terepről</p>
+        <h2>Két konyha. Ahogy ők mondják.</h2>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <article class="testi-card">
+        <div class="stars" aria-label="5 csillagból 5">★★★★★</div>
+        <p class="quote">„Tisztább konyha. A személyzet is észrevette az első héten."</p>
+        <p class="detail">
+          A fritőz nyugodtabban dolgozott, az olaj pénteki zárásig megőrizte a tisztaságát.
+          A csapatnak nem kellett mondani — maguktól szóltak.
+        </p>
+        <div class="testi-foot">
+          <div class="avatar" aria-hidden="true">ZK</div>
+          <div class="who">
+            <div class="n">Kovács Zoltán</div>
+            <div class="r">Séfvezető · Bistro III. kerület</div>
+          </div>
+          <span class="verified">Igazolt pilot</span>
+        </div>
+      </article>
+      <article class="testi-card">
+        <div class="stars" aria-label="5 csillagból 5">★★★★★</div>
+        <p class="quote">„Ropogósabb ételek, nincs égett utóíz."</p>
+        <p class="detail">
+          Ebben a hónapban kevesebb mint feleannyiszor cseréltünk olajat.
+          A terítékenkénti olajköltségünk érezhetően csökkent.
+        </p>
+        <div class="testi-foot">
+          <div class="avatar" aria-hidden="true">EH</div>
+          <div class="who">
+            <div class="n">Horváth Eszter</div>
+            <div class="r">Tulajdonos · Halászkert Szeged</div>
+          </div>
+          <span class="verified">Igazolt pilot</span>
+        </div>
+      </article>
+    </div>
+    <p class="testi-note">Szerepelne a következő számban? Válaszoljon erre az e-mailre.</p>
+  </section>
+
+  <section class="science">
+    <p class="eyebrow">Kutatás</p>
+    <h2>Mit mond a tudomány a sütőolajról</h2>
+    <p>
+      Az ismételten felmelegített sütőolajban <em>polár vegyületek</em> halmozódnak fel — az oxidáció
+      kémiai jele. A legtöbb európai szabályozó 24%-os TPC-határt szab: ennél az értéknél minősül az
+      olaj alkalmatlannak élelmiszer-előkészítésre.
+    </p>
+    <p>
+      E határon túl <em>aldehidek</em> is megjelennek az olajban — köztük a 4-HNE —, amelyeket
+      lektorált kutatások oxidatív stresszel és krónikus gyulladással hoznak összefüggésbe.
+      Ez nem csupán minőségi, hanem egészségügyi kérdés is.
+    </p>
+    <div class="callout">
+      <p>„A Beyond Oil alkalmazásával a biztonságos polár-vegyületi tartomány közel négyszeresére
+      bővül — az olaj jóval hosszabb ideig marad a hatósági határérték alatt, ugyanabban a fritőzben."</p>
+    </div>
+    <p>
+      Az eredményt a vendégek érzik: ropogósabb étel, világosabb szín, tisztább utóíz.
+      A konyha oldalán: ritkább olajcsere, kevesebb füst, mérhetően jobb levegő a személyzetnek.
+    </p>
+    <div class="profs">
+      <div class="prof">
+        <div class="ava">OF</div>
+        <div class="nm">Prof. Oren Fruchter</div>
+        <div class="ins">Wolfson Orvosi Központ</div>
+      </div>
+      <div class="prof">
+        <div class="ava">NG</div>
+        <div class="nm">Prof. Nissim Garti</div>
+        <div class="ins">Héber Egyetem, Jeruzsálem</div>
+      </div>
+      <div class="prof">
+        <div class="ava">SH</div>
+        <div class="nm">Prof. Sarel Halahmi</div>
+        <div class="ins">Bnei Zion Orvosi Központ</div>
+      </div>
+    </div>
+    <p class="src">Forrás: lektorált szakirodalom · Beyond Oil tudományos tanácsadó testület</p>
+  </section>
+
+  <section class="cta">
+    <p class="eyebrow">Próbálja ki a saját konyhájában</p>
+    <h2>Mérje meg, mit csinál az olajával.</h2>
+    <p class="sub">
+      30 napos, kockázatmentes pilot. Mi szállítunk, betanítjuk a csapatát, és közösen mérjük
+      az eredményeket — az olaj aktív napjait, a TPC-értéket, a terítékenkénti olajköltséget.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#">Kérem a 30 napos pilotot →</a>
+      <a class="btn btn-outline" href="#">Bővebben</a>
+    </div>
+    <p class="cta-note">Kockázatmentes. Ha nem lát mérhető megtakarítást, nem folytatja.</p>
+  </section>
+
+  <section class="next">
+    <div class="next-label">A következő számban</div>
+    <div class="next-row">
+      <div class="next-date">
+        <div class="m">Jún. 4.</div>
+        <div class="y">2026</div>
+      </div>
+      <div class="vrule"></div>
+      <div class="next-body">
+        <p class="t">Nyári csúcsidény-szám</p>
+        <p class="d">Terasz-szezon, csúcsidei fritőzterhelés és egy nyomtatható ROI-kalkulátor,
+          amelyet 10 perc alatt lefuttathat a pénzügyi felelőssel.</p>
+      </div>
+      <span class="tag-roi">ROI</span>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <img class="logo" src="assets/logo-white.png" alt="Beyond Oil" />
+    <div class="footer-links">
+      <a href="#">Weboldal</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Kapcsolat</a>
+      <a href="#">Sajtó</a>
+    </div>
+    <hr />
+    <div class="footer-bottom">
+      <div>© 2026 ThinkBeyond Hungary / Beyond Oil.<br/>Kezeli: DOUPLA Creative &amp; Digital.</div>
+      <div class="right">
+        <a href="#">Leiratkozás</a> · <a href="#">Adatvédelmi irányelvek</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+<!-- ===================== /NEWSLETTER ===================== -->
+
+
+<!-- ===================== EDITOR BAR ===================== -->
+<div id="editor-bar">
+  <div class="bar-left">
+    <span class="dot"></span>
+    <span>Szerkesztő mód — kattintson bármely zöld keretű szövegre a módosításhoz</span>
+  </div>
+  <div class="bar-right">
+    <span class="saved-badge" id="saved-badge">✓ Mentve</span>
+    <button class="btn-reset" onclick="resetContent()">Visszaállítás</button>
+    <button class="btn-save" onclick="saveHTML()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7l-4-4zm-5 16a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm3-10H5V5h10v4z"/></svg>
+      Mentés (index.html letöltése)
+    </button>
+  </div>
+</div>
+<!-- ===================== /EDITOR BAR ===================== -->
+
+
+<script>
+// ─── Editable selectors ───────────────────────────────────────────────────────
+const EDITABLE = [
+  // Preheader
+  '.preheader > span:first-child',
+  // Header
+  '.pill-launch',
+  '.header-body .eyebrow',
+  '.headline',           // contains .alt span — both edit together, browser handles it fine
+  '.meta > span:not(.dot)',
+  // Rafi
+  '.video-label',
+  '.duration',
+  '.rafi-name',
+  '.rafi-role',
+  '.rafi-text',
+  '.chip-outline',
+  // Product
+  '.product .eyebrow',
+  '.product h2',
+  '.product .sub',
+  '.bullets li',
+  // Stats
+  '.stat .num',
+  '.stat .lbl',
+  // Testimonials
+  '.testi-hero-text .eyebrow',
+  '.testi-hero-text h2',
+  '.quote',
+  '.detail',
+  '.testi-foot .who .n',
+  '.testi-foot .who .r',
+  '.verified',
+  '.testi-note',
+  // Science
+  '.science .eyebrow',
+  '.science h2',
+  '.science > p',
+  '.callout p',
+  '.prof .nm',
+  '.prof .ins',
+  '.src',
+  // CTA
+  '.cta .eyebrow',
+  '.cta h2',
+  '.cta .sub',
+  '.btn-primary',
+  '.btn-outline',
+  '.cta-note',
+  // Next issue
+  '.next-label',
+  '.next-date .m',
+  '.next-date .y',
+  '.next-body .t',
+  '.next-body .d',
+  '.tag-roi',
+  // Footer
+  '.footer-bottom > div:first-child',
+];
+
+// ─── Original content snapshot for reset ─────────────────────────────────────
+const originals = new Map();
+
+function init() {
+  EDITABLE.forEach(selector => {
+    document.querySelectorAll(selector).forEach(el => {
+      el.setAttribute('contenteditable', 'true');
+      el.setAttribute('spellcheck', 'true');
+      originals.set(el, el.innerHTML);
+
+      // Prevent Enter from creating <div> blocks — keep it clean
+      el.addEventListener('keydown', e => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          document.execCommand('insertLineBreak');
+        }
+      });
+    });
+  });
+}
+
+// ─── Save: produces clean index.html ─────────────────────────────────────────
+function saveHTML() {
+  const clone = document.documentElement.cloneNode(true);
+
+  // Remove editor bar
+  clone.querySelector('#editor-bar')?.remove();
+
+  // Remove editor styles
+  clone.querySelector('#editor-styles')?.remove();
+
+  // Remove contenteditable + spellcheck attributes
+  clone.querySelectorAll('[contenteditable]').forEach(el => {
+    el.removeAttribute('contenteditable');
+    el.removeAttribute('spellcheck');
+  });
+
+  // Fix lang + title
+  clone.setAttribute('lang', 'hu');
+  const titleEl = clone.querySelector('title');
+  if (titleEl) titleEl.textContent = 'Beyond Oil — Nyitószám · 2026. május';
+
+  // Trim extra body padding added for editor bar
+  const bodyEl = clone.querySelector('body');
+  if (bodyEl) bodyEl.style.paddingBottom = '';
+
+  const html = '<!doctype html>\n' + clone.outerHTML;
+  const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'index.html';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(a.href);
+
+  // Show saved badge
+  const badge = document.getElementById('saved-badge');
+  badge.classList.add('visible');
+  setTimeout(() => badge.classList.remove('visible'), 2500);
+}
+
+// ─── Reset: restore all originals ────────────────────────────────────────────
+function resetContent() {
+  if (!confirm('Visszaállítja az összes szöveget az eredeti verzióra?')) return;
+  originals.forEach((html, el) => { el.innerHTML = html; });
+}
+
+// ─── Boot ─────────────────────────────────────────────────────────────────────
+init();
+</script>
+</body>
+</html>
