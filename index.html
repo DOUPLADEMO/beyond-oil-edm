@@ -1,388 +1,675 @@
 <!doctype html>
-<html lang="hu"><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Beyond Oil — Nyitószám · 2026. május</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500&amp;display=swap" rel="stylesheet">
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Beyond Oil — Nyitószám · 2026. június</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500&display=swap" rel="stylesheet">
 
-<style id="newsletter-styles">
-  :root {
-    --bg-dark: #0D2218;
-    --bg-darker: #081510;
-    --bg-dark-2: #163527;
-    --green: #4CAF50;
-    --lime: #8BC34A;
-    --offwhite: #F3F8F0;
-    --paper: #ffffff;
-    --ink: #0D2218;
-    --muted-dark: rgba(243,248,240,0.72);
-    --muted-darker: rgba(243,248,240,0.55);
-    --muted-light: #5b6a62;
-    --hairline-dark: rgba(243,248,240,0.10);
-    --hairline-light: #e6ece5;
-  }
-  * { box-sizing: border-box; }
-  html, body {
-    margin: 0; padding: 0;
-    background: #e9ede6;
-    font-family: 'DM Sans', system-ui, sans-serif;
-    color: var(--ink);
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
-  body { padding: 32px 16px 96px; }
-  .wrap {
-    max-width: 680px;
-    margin: 0 auto;
-    background: var(--paper);
-    box-shadow: 0 30px 80px -40px rgba(13,34,24,0.35), 0 4px 16px -8px rgba(13,34,24,0.15);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  a { color: inherit; }
-  .preheader {
-    background: var(--bg-darker);
-    color: var(--muted-dark);
-    padding: 12px 32px;
-    display: flex; align-items: center; justify-content: space-between;
-    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-    font-weight: 500;
-  }
-  .preheader .right {
-    color: var(--lime);
-    text-decoration: none;
-    display: inline-flex; align-items: center; gap: 6px;
-  }
-  .preheader .right:hover { color: #b6e07a; }
-  .header {
-    background: var(--bg-dark);
-    color: white;
-    padding: 28px 40px 56px;
-    position: relative;
-    overflow: hidden;
-  }
-  .header::before {
-    content: "";
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(60% 60% at 90% 0%, rgba(139,195,74,0.12), transparent 70%),
-      radial-gradient(40% 40% at 0% 100%, rgba(76,175,80,0.10), transparent 70%);
-    pointer-events: none;
-  }
-  .header-top {
-    display: flex; align-items: center; justify-content: space-between;
-    position: relative; z-index: 1;
-  }
-  .header-top img.logo { height: 48px; width: auto; display: block; }
-  .pill-launch {
-    background: var(--green);
-    color: #0a1f12;
-    font-weight: 600;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    padding: 8px 14px;
-    border-radius: 999px;
-    display: inline-flex; align-items: center; gap: 8px;
-  }
-  .pill-launch::before {
-    content: "";
-    width: 6px; height: 6px; border-radius: 50%;
-    background: #0a1f12;
-    box-shadow: 0 0 0 3px rgba(10,31,18,0.15);
-  }
-  .header-body { position: relative; z-index: 1; margin-top: 44px; }
-  .eyebrow {
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--lime);
-    font-weight: 600;
-    margin: 0 0 18px;
-  }
-  .headline {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 56px;
-    line-height: 1.02;
-    letter-spacing: -0.02em;
-    font-weight: 700;
-    margin: 0;
-    color: white;
-  }
-  .headline .alt {
-    display: block;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--lime);
-    margin-top: 4px;
-  }
-  .meta {
-    margin-top: 24px;
-    font-size: 13px;
-    color: var(--muted-dark);
-    display: flex; flex-wrap: wrap; gap: 6px 12px;
-    align-items: center;
-  }
-  .meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted-darker); display: inline-block; }
-  .rafi {
-    background: var(--bg-dark);
-    color: white;
-    padding: 0 40px 56px;
-  }
-  .video-frame {
-    position: relative;
-    aspect-ratio: 16 / 9;
-    border-radius: 14px;
-    overflow: hidden;
-    background: radial-gradient(120% 80% at 50% 50%, #1d4730 0%, #0e2719 70%, #081510 100%);
-    border: 1px solid rgba(139,195,74,0.18);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .video-frame::after {
-    content: "";
-    position: absolute; inset: 0;
-    background: repeating-linear-gradient(115deg, rgba(255,255,255,0.018) 0 2px, transparent 2px 7px);
-    pointer-events: none;
-  }
-  .play-btn {
-    width: 76px; height: 76px;
-    border-radius: 50%;
-    background: var(--lime);
-    color: #0a1f12;
-    border: none;
-    display: flex; align-items: center; justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 18px 40px -12px rgba(139,195,74,0.55), 0 0 0 8px rgba(139,195,74,0.15);
-    transition: transform .25s ease, box-shadow .25s ease;
-    position: relative; z-index: 1;
-  }
-  .play-btn:hover { transform: scale(1.05); }
-  .play-btn svg { margin-left: 4px; }
-  .video-label {
-    position: absolute;
-    bottom: 16px; left: 18px;
-    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--muted-dark);
-    background: rgba(8,21,16,0.55);
-    backdrop-filter: blur(6px);
-    padding: 6px 10px;
-    border-radius: 6px;
-    border: 1px solid var(--hairline-dark);
-  }
-  .duration {
-    position: absolute;
-    top: 16px; right: 16px;
-    font-size: 11px; letter-spacing: 0.08em;
-    color: white;
-    background: rgba(8,21,16,0.65);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-variant-numeric: tabular-nums;
-  }
-  .rafi-info { margin-top: 28px; }
-  .rafi-name { font-size: 18px; font-weight: 700; color: white; margin: 0; letter-spacing: -0.01em; }
-  .rafi-role { font-size: 13px; color: var(--muted-darker); margin: 4px 0 0; }
-  .rafi-text { margin-top: 20px; font-size: 15px; line-height: 1.65; color: var(--muted-dark); }
-  .rafi-text + .rafi-text { margin-top: 12px; }
-  .chip-row { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-  .chip {
-    height: 36px; border-radius: 999px; padding: 0 16px;
-    display: inline-flex; align-items: center; justify-content: center;
-    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600;
-  }
-  .chip-light { background: white; color: #0a1f12; box-shadow: 0 2px 0 rgba(0,0,0,0.08); }
-  .chip-light .ph { display: inline-flex; align-items: center; gap: 8px; }
-  .chip-light .ph .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
-  .chip-outline { border: 1px solid rgba(139,195,74,0.5); color: var(--lime); background: transparent; }
-  .product { display: grid; grid-template-columns: 52% 48%; min-height: 320px; }
-  .product .img { background: #0a1f12 url('assets/product-pack.png') center / cover no-repeat; }
-  .product .copy {
-    background: var(--bg-dark-2); color: white; padding: 40px 36px;
-    display: flex; flex-direction: column; justify-content: center;
-  }
-  .product .copy .eyebrow { color: var(--lime); margin-bottom: 14px; }
-  .product h2 { font-size: 30px; line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 8px; font-weight: 700; }
-  .product .sub { font-size: 13px; color: var(--muted-dark); margin: 0 0 20px; }
-  .bullets { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-  .bullets li {
-    font-size: 14px; color: rgba(255,255,255,0.92);
-    display: flex; gap: 10px; align-items: flex-start; line-height: 1.45;
-  }
-  .bullets li::before {
-    content: "";
-    width: 14px; height: 14px; flex: none; margin-top: 4px;
-    background: var(--lime);
-    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/contain no-repeat;
-            mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/contain no-repeat;
-  }
-  .stats { background: var(--green); display: grid; grid-template-columns: repeat(4, 1fr); }
-  .stat {
-    padding: 32px 18px; text-align: center; color: #0a1f12;
-    border-right: 1px solid rgba(10,31,18,0.16);
-  }
-  .stat:last-child { border-right: none; }
-  .stat .num { font-size: 38px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
-  .stat .lbl { margin-top: 10px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: rgba(10,31,18,0.78); line-height: 1.4; }
-  .testi { background: white; padding: 56px 40px; }
-  .testi-hero {
-    position: relative; height: 220px; border-radius: 14px; overflow: hidden;
-    background: #0a1f12 url('assets/rating-stars.png') center / cover no-repeat;
-  }
-  .testi-hero::before {
-    content: ""; position: absolute; inset: 0;
-    background: linear-gradient(90deg, rgba(13,34,24,0.92) 0%, rgba(13,34,24,0.78) 35%, rgba(13,34,24,0.0) 70%);
-  }
-  .testi-hero-text { position: absolute; bottom: 22px; left: 24px; right: 24px; color: white; }
-  .testi-hero-text .eyebrow { color: var(--lime); margin-bottom: 8px; }
-  .testi-hero-text h2 { margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.05; }
-  .testi-grid { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .testi-card {
-    background: var(--offwhite); border-left: 3px solid var(--green);
-    padding: 22px 22px 20px; border-radius: 0 10px 10px 0;
-    display: flex; flex-direction: column;
-  }
-  .stars { color: #f5b301; letter-spacing: 1px; font-size: 14px; }
-  .quote { font-style: italic; font-size: 18px; line-height: 1.4; margin: 12px 0 10px; color: var(--ink); letter-spacing: -0.005em; }
-  .detail { font-size: 13px; color: var(--muted-light); line-height: 1.55; margin: 0 0 18px; }
-  .testi-foot { margin-top: auto; display: flex; align-items: center; gap: 12px; }
-  .avatar {
-    width: 38px; height: 38px; border-radius: 50%;
-    background: linear-gradient(135deg, #cfe5b8, #88a972);
-    flex: none; display: flex; align-items: center; justify-content: center;
-    color: #0a1f12; font-weight: 700; font-size: 13px;
-  }
-  .testi-foot .who { line-height: 1.25; }
-  .testi-foot .who .n { font-size: 13px; font-weight: 600; }
-  .testi-foot .who .r { font-size: 12px; color: var(--muted-light); }
-  .verified {
-    margin-left: auto; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
-    font-weight: 600; color: var(--green); background: rgba(76,175,80,0.10);
-    padding: 5px 9px; border-radius: 999px;
-  }
-  .testi-note { margin-top: 22px; font-size: 13px; font-style: italic; color: var(--muted-light); text-align: center; }
-  .science { background: var(--bg-dark); color: white; padding: 64px 40px; position: relative; overflow: hidden; }
-  .science::before {
-    content: ""; position: absolute; inset: 0;
-    background-image: url('assets/oil-bg.jpeg');
-    background-size: cover; background-position: center; opacity: 0.18; mix-blend-mode: screen;
-  }
-  .science > * { position: relative; z-index: 1; }
-  .science h2 { margin: 0 0 24px; font-size: 32px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.1; max-width: 28ch; }
-  .science p { font-size: 15px; line-height: 1.7; color: var(--muted-dark); margin: 0 0 14px; }
-  .callout { margin: 22px 0; padding: 20px 22px; border-left: 3px solid var(--lime); background: rgba(139,195,74,0.06); border-radius: 0 10px 10px 0; }
-  .callout p { margin: 0; color: var(--lime); font-style: italic; font-size: 16px; line-height: 1.5; }
-  .profs { margin-top: 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .prof { background: rgba(255,255,255,0.025); border: 1px solid var(--hairline-dark); border-radius: 12px; padding: 18px 16px; text-align: center; }
-  .prof .ava {
-    width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 12px;
-    background: linear-gradient(135deg, #2c5a3e, #1a3927);
-    display: flex; align-items: center; justify-content: center;
-    color: var(--lime); font-weight: 700; font-size: 18px;
-    border: 1px solid rgba(139,195,74,0.3);
-  }
-  .prof .nm { font-size: 13px; font-weight: 600; color: white; line-height: 1.3; }
-  .prof .ins { margin-top: 4px; font-size: 11px; color: var(--muted-darker); line-height: 1.4; }
-  .src { margin-top: 22px; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-darker); }
-  .cta { background: var(--offwhite); padding: 64px 40px; text-align: center; }
-  .cta .eyebrow { color: var(--green); }
-  .cta h2 { margin: 14px 0 12px; font-size: 36px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; color: var(--ink); }
-  .cta .sub { font-size: 15px; color: var(--muted-light); line-height: 1.55; margin: 0 auto 28px; max-width: 44ch; }
-  .btn-row { display: inline-flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    padding: 14px 22px; border-radius: 10px; font-size: 14px; font-weight: 600;
-    letter-spacing: 0.01em; cursor: pointer;
-    transition: transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease;
-    text-decoration: none; border: 1px solid transparent;
-  }
-  .btn-primary { background: var(--green); color: #0a1f12; }
-  .btn-primary:hover { background: #3f9943; transform: translateY(-1px); }
-  .btn-outline { background: transparent; color: var(--ink); border-color: rgba(13,34,24,0.2); }
-  .btn-outline:hover { border-color: var(--green); color: var(--green); }
-  .cta-note { margin: 20px auto 0; font-size: 12px; color: var(--muted-light); max-width: 50ch; }
-  .next { background: white; border-top: 1px solid var(--hairline-light); padding: 28px 40px; }
-  .next-label { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: var(--muted-light); margin-bottom: 14px; }
-  .next-row { display: flex; align-items: center; gap: 22px; }
-  .next-date { flex: none; text-align: center; line-height: 1; }
-  .next-date .m { font-size: 36px; font-weight: 700; color: var(--green); letter-spacing: -0.02em; }
-  .next-date .y { margin-top: 4px; font-size: 11px; color: var(--muted-light); letter-spacing: 0.1em; }
-  .vrule { width: 1px; align-self: stretch; background: var(--hairline-light); }
-  .next-body { flex: 1; }
-  .next-body .t { font-size: 16px; font-weight: 600; color: var(--ink); margin: 0 0 4px; }
-  .next-body .d { font-size: 13px; color: var(--muted-light); line-height: 1.5; margin: 0; }
-  .tag-roi { flex: none; align-self: flex-start; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--green); background: rgba(76,175,80,0.10); padding: 6px 10px; border-radius: 6px; }
-  .footer { background: var(--bg-dark); color: var(--muted-dark); padding: 40px 40px 32px; }
-  .footer img.logo { height: 48px; width: auto; display: block; }
-  .footer-links { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 18px; }
-  .footer-links a { color: var(--muted-dark); text-decoration: none; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; }
-  .footer-links a:hover { color: var(--lime); }
-  .footer hr { margin: 22px 0 18px; border: 0; height: 1px; background: var(--hairline-dark); }
-  .footer-bottom { display: flex; justify-content: space-between; gap: 16px; font-size: 11px; color: var(--muted-darker); line-height: 1.6; }
-  .footer-bottom .right { text-align: right; }
-  .footer-bottom a { color: var(--muted-darker); text-decoration: none; }
-  .footer-bottom a:hover { color: var(--lime); }
+  <style>
+    :root {
+      --bg-dark: #0D2218;
+      --bg-darker: #081510;
+      --bg-dark-2: #163527;
+      --green: #4CAF50;
+      --lime: #8BC34A;
+      --offwhite: #F3F8F0;
+      --paper: #ffffff;
+      --ink: #0D2218;
+      --muted-dark: rgba(243,248,240,0.72);
+      --muted-darker: rgba(243,248,240,0.55);
+      --muted-light: #5b6a62;
+      --hairline-dark: rgba(243,248,240,0.10);
+      --hairline-light: #e6ece5;
+    }
 
-  @media (max-width: 600px) {
-    body { padding: 12px 0 80px; }
-    .preheader { padding: 12px 20px; font-size: 10px; }
-    .header, .rafi, .testi, .science, .cta, .next, .footer { padding-left: 20px; padding-right: 20px; }
-    .header { padding-top: 22px; padding-bottom: 40px; }
-    .headline { font-size: 40px; }
-    .product { grid-template-columns: 1fr; }
-    .product .img { min-height: 240px; }
-    .product .copy { padding: 28px 20px; }
-    .stats { grid-template-columns: 1fr 1fr; }
-    .stat { border-right: none; border-bottom: 1px solid rgba(10,31,18,0.16); }
-    .stat:nth-child(2) { border-right: none; }
-    .stat:nth-last-child(-n+2) { border-bottom: none; }
-    .testi-grid { grid-template-columns: 1fr; }
-    .testi-hero { height: 200px; }
-    .testi-hero-text h2 { font-size: 24px; }
-    .profs { grid-template-columns: 1fr; }
-    .science h2 { font-size: 26px; }
-    .cta h2 { font-size: 28px; }
-    .btn-row { display: flex; flex-direction: column; width: 100%; }
-    .btn-outline { width: 100%; }
-    .next-row { gap: 14px; }
-    .next-date .m { font-size: 28px; }
-    .footer-bottom { flex-direction: column; }
-    .footer-bottom .right { text-align: left; }
-    .chip-row { gap: 8px; }
-  }
-</style>
+    * { box-sizing: border-box; }
 
-<!-- Editor styles injected separately so they're easy to strip on save -->
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #e9ede6;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
 
-<style id="content-branding-colors">
-        :root {
-          --check-primary-color: #F77F00 !important;
-          --check-primary-hover: #F77F00dd !important;
-        }
-      </style></head>
+    body { padding: 32px 16px 96px; }
+
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 30px 80px -40px rgba(13,34,24,0.35), 0 4px 16px -8px rgba(13,34,24,0.15);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .preheader {
+      background: var(--bg-darker);
+      color: var(--muted-dark);
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .preheader .right {
+      color: var(--lime);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .preheader .right:hover { color: #b6e07a; }
+
+    .header {
+      background: var(--bg-dark);
+      color: white;
+      padding: 28px 40px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(60% 60% at 90% 0%, rgba(139,195,74,0.12), transparent 70%),
+        radial-gradient(40% 40% at 0% 100%, rgba(76,175,80,0.10), transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-top img.logo { height: 48px; width: auto; display: block; }
+
+    .pill-launch {
+      background: var(--green);
+      color: #0a1f12;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pill-launch::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #0a1f12;
+      box-shadow: 0 0 0 3px rgba(10,31,18,0.15);
+    }
+
+    .header-body { position: relative; z-index: 1; margin-top: 44px; }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--lime);
+      font-weight: 600;
+      margin: 0 0 18px;
+    }
+
+    .headline {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 56px;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      margin: 0;
+      color: white;
+    }
+
+    .headline .alt {
+      display: block;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--lime);
+      margin-top: 4px;
+    }
+
+    .meta {
+      margin-top: 24px;
+      font-size: 13px;
+      color: var(--muted-dark);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+      align-items: center;
+    }
+
+    .meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted-darker); display: inline-block; }
+
+    .rafi {
+      background: var(--bg-dark);
+      color: white;
+      padding: 0 40px 56px;
+    }
+
+    .video-frame {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      border-radius: 14px;
+      overflow: hidden;
+      background: radial-gradient(120% 80% at 50% 50%, #1d4730 0%, #0e2719 70%, #081510 100%);
+      border: 1px solid rgba(139,195,74,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(115deg, rgba(255,255,255,0.018) 0 2px, transparent 2px 7px);
+      pointer-events: none;
+    }
+
+    .play-btn {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: var(--lime);
+      color: #0a1f12;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 18px 40px -12px rgba(139,195,74,0.55), 0 0 0 8px rgba(139,195,74,0.15);
+      transition: transform .25s ease, box-shadow .25s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .play-btn:hover { transform: scale(1.05); }
+    .play-btn svg { margin-left: 4px; }
+
+    .video-label {
+      position: absolute;
+      bottom: 16px;
+      left: 18px;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted-dark);
+      background: rgba(8,21,16,0.55);
+      backdrop-filter: blur(6px);
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--hairline-dark);
+    }
+
+    .duration {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: white;
+      background: rgba(8,21,16,0.65);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .rafi-info { margin-top: 28px; }
+
+    .rafi-name {
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+      margin: 0;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+
+    .rafi-role {
+      font-size: 14px;
+      color: var(--muted-darker);
+      margin: 8px 0 0;
+      font-weight: 500;
+    }
+
+    .rafi-bio {
+      margin-top: 16px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--muted-dark);
+    }
+
+    .chip-row {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .chip {
+      height: 36px;
+      border-radius: 999px;
+      padding: 0 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .chip-light {
+      background: white;
+      color: #0a1f12;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.08);
+    }
+
+    .chip-light .ph {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chip-light .ph .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .chip-outline {
+      border: 1px solid rgba(139,195,74,0.5);
+      color: var(--lime);
+      background: transparent;
+    }
+
+    .product {
+      display: grid;
+      grid-template-columns: 52% 48%;
+      min-height: 320px;
+    }
+
+    .product .img {
+      background: #0a1f12 url('assets/product-pack.png') center / cover no-repeat;
+    }
+
+    .product .copy {
+      background: var(--bg-dark-2);
+      color: white;
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .product .copy .eyebrow {
+      color: var(--lime);
+      margin-bottom: 14px;
+    }
+
+    .product h2 {
+      font-size: 30px;
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+      margin: 0 0 8px;
+      font-weight: 700;
+    }
+
+    .product .sub {
+      font-size: 13px;
+      color: var(--muted-dark);
+      margin: 0 0 20px;
+    }
+
+    .bullets {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .bullets li {
+      font-size: 14px;
+      color: rgba(255,255,255,0.92);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      line-height: 1.45;
+    }
+
+    .bullets li::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      flex: none;
+      margin-top: 4px;
+      background: var(--lime);
+      -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/contain no-repeat;
+      mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/contain no-repeat;
+    }
+
+    .stats {
+      background: var(--green);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .stat {
+      padding: 32px 18px;
+      text-align: center;
+      color: #0a1f12;
+      border-right: 1px solid rgba(10,31,18,0.16);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat .num {
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .stat .lbl {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .science {
+      padding: 56px 40px;
+      background: white;
+      color: var(--ink);
+    }
+
+    .science h2 {
+      font-size: 32px;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      margin: 16px 0 28px;
+      font-weight: 700;
+    }
+
+    .science > p {
+      font-size: 15px;
+      line-height: 1.7;
+      margin: 0 0 20px;
+    }
+
+    .callout {
+      background: var(--offwhite);
+      border-left: 4px solid var(--green);
+      padding: 20px 24px;
+      margin: 28px 0;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink);
+    }
+
+    .callout p { margin: 0; }
+
+    .profs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 40px 0;
+      padding-top: 20px;
+      border-top: 1px solid var(--hairline-light);
+    }
+
+    .prof {
+      text-align: center;
+    }
+
+    .prof .ava {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #0a1f12;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 auto 12px;
+    }
+
+    .prof .nm {
+      font-size: 13px;
+      font-weight: 600;
+      margin: 0;
+      color: var(--ink);
+    }
+
+    .prof .ins {
+      font-size: 12px;
+      color: var(--muted-light);
+      margin: 4px 0 0;
+    }
+
+    .src {
+      font-size: 11px;
+      color: var(--muted-darker);
+      margin: 40px 0 0;
+      padding-top: 24px;
+      border-top: 1px solid var(--hairline-light);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-image {
+      width: 100%;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .cta {
+      padding: 56px 40px;
+      background: var(--bg-dark);
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 40px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 16px 0 20px;
+      font-weight: 700;
+    }
+
+    .cta .sub {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--muted-dark);
+      margin-bottom: 28px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+      text-align: center;
+      text-decoration: none;
+      transition: all .25s ease;
+    }
+
+    .btn-primary {
+      background: var(--lime);
+      color: #0a1f12;
+    }
+
+    .btn-primary:hover {
+      background: #b6e07a;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(139,195,74,0.5);
+      color: var(--lime);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: rgba(139,195,74,0.1);
+    }
+
+    .cta-note {
+      font-size: 12px;
+      color: var(--muted-darker);
+      margin: 0;
+    }
+
+    .footer {
+      background: var(--bg-darker);
+      color: var(--muted-dark);
+      padding: 40px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      height: 40px;
+      width: auto;
+      margin-bottom: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 28px;
+      font-size: 13px;
+    }
+
+    .footer-links a {
+      color: var(--muted-dark);
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .footer-links a:hover { color: var(--lime); }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(139,195,74,0.1);
+      color: var(--lime);
+      transition: all .2s ease;
+    }
+
+    .social-icons a:hover {
+      background: rgba(139,195,74,0.25);
+      transform: translateY(-2px);
+    }
+
+    .social-icons svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .footer hr {
+      border: none;
+      border-top: 1px solid rgba(139,195,74,0.15);
+      margin: 28px 0;
+    }
+
+    .footer-bottom {
+      font-size: 12px;
+      color: var(--muted-darker);
+    }
+
+    .footer-bottom div {
+      margin: 8px 0;
+    }
+
+    @media (max-width: 640px) {
+      .product { grid-template-columns: 1fr; }
+      .product .img { aspect-ratio: 16/9; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .profs { grid-template-columns: repeat(2, 1fr); }
+      .btn-row { display: grid; }
+    }
+  </style>
+</head>
+
 <body>
 
-<!-- ===================== NEWSLETTER ===================== -->
-<main class="wrap" id="newsletter">
+<main class="wrap">
 
   <div class="preheader">
-    <span>Hírlevél #1 · 2026. május</span>
-    <a class="right" href="#">thinkbeyond.hu <span aria-hidden="true">↗</span></a>
+    <span>Beyond Oil — Nyitószám</span>
+    <a href="#" class="right">2026. június 10.</a>
   </div>
 
-  <header class="header">
+  <section class="header">
     <div class="header-top">
       <img class="logo" src="assets/logo-white.png" alt="Beyond Oil">
       <span class="pill-launch">Nyitószám</span>
     </div>
     <div class="header-body">
-      <p class="eyebrow">Beyond Oil Hungary · Első hírlevél</p>
+      <p class="eyebrow">Beyond Oil Hungary · Első Hírlevél</p>
       <h1 class="headline">
         A szakma régóta küzd a problémával.<span class="alt">Mi új megoldást hozunk rá.</span>
       </h1>
       <div class="meta">
-        <span>2026. május 7.</span>
+        <span>2026. június 10.</span>
         <span class="dot"></span>
         <span>Havonta</span>
         <span class="dot"></span>
@@ -391,43 +678,45 @@
         <span>HoReCa Hungary</span>
       </div>
     </div>
-  </header>
+  </section>
 
   <section class="rafi">
-    <div class="video-frame" role="img">
-      <button class="play-btn" aria-label="Videó lejátszása">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+    <div class="video-frame">
+      <button class="play-btn" title="Lejátszás">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 4v24l20-12L8 4z" fill="currentColor"/>
+        </svg>
       </button>
-      <span class="video-label">Rafi Orel · Ügyvezető igazgató</span>
-      <span class="duration">2:14</span>
+      <span class="duration">0:58</span>
     </div>
     <div class="rafi-info">
-      <p class="rafi-name">Rafi Orel</p>
+      <h2 class="rafi-name">Rafi Orel</h2>
       <p class="rafi-role">Ügyvezető igazgató, ThinkBeyond Hungary</p>
-      <p class="rafi-text"><p class="MsoNormal">Üdvözöljük az első számban!&nbsp;&nbsp;<o:p></o:p>A Beyond Oil Hungary-t azért hoztuk létre, hogy megoldást
-kínáljunk egy gyakori, mégis sokszor láthatatlan iparági problémára: azt
-tapasztaltuk, hogy kedvenc budapesti, debreceni és szegedi éttermeink konyhái
-észrevétlenül veszítenek a profitjukból és az ételeik minőségéből. Ezek
-hátterében pedig ugyanaz az ok áll: a túl gyorsan elhasználódó sütőolaj.</p><p class="MsoNormal"><o:p></o:p></p></p>
-      <p class="rafi-text"><p class="MsoNormal">Hírlevelünkben minden hónapban röviden összegyűjtjük, mi az,
-ami a gyakorlatban is beválik a professzionális konyhában, mit mutatnak a
-legfrissebb tudományos eredmények, és mire érdemes figyelni a SIRHA és az
-Internorga szakkiállításain. Semmi felesleges mellébeszélés, csak a lényeg:
-minden, ami hatékonyabbá és kiszámíthatóbbá teszi az Ön konyhájának működését.<o:p></o:p></p></p>
+      <p class="rafi-bio">
+        Üdvözöljük az első számban! A Beyond Oil Hungary-t azért hoztuk létre, hogy megoldást kínáljunk egy gyakori, mégis sokszor láthatatlan iparági problémára: azt tapasztaltuk, hogy kedvenc budapesti, debreceni és szegedi éttermeink konyhái észrevétlenül veszítenek a profitjukból és az ételeik minőségéből. Ezek hátterében pedig ugyanaz az ok áll: a túl gyorsan elhasználódó sütőolaj.
+      </p>
+      <p class="rafi-bio" style="margin-top: 12px; font-size: 13px;">
+        Hírlevelünkben minden hónapban röviden összegyűjtjük, mi az, ami a gyakorlatban is beválik a professzionális konyhában, mit mutatnak a legfrissebb tudományos eredmények, és mire érdemes figyelni a SIRHA és az Internorga szakkiállításain. Semmi felesleges mellébeszélés, csak a lényeg: minden, ami hatékonyabbá és kiszámíthatóbbá teszi az Ön konyhájának működését.
+      </p>
       <div class="chip-row">
-        <span class="chip chip-light"><span class="ph"><span class="dot"></span>SIRHA Budapest</span></span>
-        <span class="chip chip-light"><span class="ph"><span class="dot" style="background:#e63946"></span>Internorga</span></span>
-        <span class="chip chip-outline">Hírlevél #1 · 2026. május</span>
+        <span class="chip chip-light">
+          <span class="ph">
+            <span class="dot"></span> Beyond Oil Hungary
+          </span>
+        </span>
+        <span class="chip chip-outline">HoReCa megoldás</span>
       </div>
     </div>
   </section>
 
   <section class="product">
-    <div class="img" role="img" aria-label="Beyond Oil szűrőpor csomagolása rozsdamentes konyhai pulton"></div>
+    <div class="img"></div>
     <div class="copy">
-      <p class="eyebrow">A termék</p>
+      <p class="eyebrow">A Termék</p>
       <h2>Beyond Oil Filter Powder</h2>
-      <p class="sub">Sütőolajhoz · Élelmiszer-minőségű · 250 g</p>
+      <p class="sub">
+        Sütőolajhoz · Élelmiszer-minőségű · 250 g
+      </p>
       <ul class="bullets">
         <li>Az olaj élettartamát akár 3-szorosára növeli</li>
         <li>Csökkenti a polár vegyületek szintjét</li>
@@ -436,49 +725,19 @@ minden, ami hatékonyabbá és kiszámíthatóbbá teszi az Ön konyhájának m�
     </div>
   </section>
 
-  <section class="stats" aria-label="Kulcsszámok">
-    <div class="stat"><div class="num">12</div><div class="lbl">Aktív partner Magyarországon</div></div>
-    <div class="stat"><div class="num">~46%</div><div class="lbl">Átlagos olajköltség-csökkentés</div></div>
-    <div class="stat"><div class="num">3x</div><div class="lbl">Ritkább olajcsere</div></div>
-    <div class="stat"><div class="num">30</div><div class="lbl">Napos kockázatmentes próbaidőszak</div></div>
-  </section>
-
-  <section class="testi">
-    <div class="testi-hero">
-      <div class="testi-hero-text">
-        <p class="eyebrow">Egyenesen a terepről</p>
-        <h2>Két konyha tapasztalatai - első kézből</h2>
-      </div>
+  <section class="stats">
+    <div class="stat">
+      <div class="num">3–4×</div>
+      <div class="lbl">Hosszabb olaj-élet</div>
     </div>
-    <div class="testi-grid">
-      <article class="testi-card">
-        <div class="stars" aria-label="5 csillagból 5">★★★★★</div>
-        <p class="quote">„Tisztább lett a konyha. A személyzet is észrevette az első héten."</p>
-        <p class="detail"><p class="MsoNormal">„A fritőz használata sokkal egyszerűbb lett, az olaj pénteki zárásig megőrizte a tisztaságát.”</p></p>
-        <div class="testi-foot">
-          <div class="avatar" aria-hidden="true">ZK</div>
-          <div class="who">
-            <div class="n">Kovács Zoltán</div>
-            <div class="r">Séf · Bistro III. kerület</div>
-          </div>
-          <span class="verified">Igazolt pilot</span>
-        </div>
-      </article>
-      <article class="testi-card">
-        <div class="stars" aria-label="5 csillagból 5">★★★★★</div>
-        <p class="quote">„Ropogósabb ételek, égett utóíz nélkül."</p>
-        <p class="detail">„Ebben a hónapban az olajcserék száma kevesebb, mint a felére csökkent. A terítékenkénti olajköltségünk is érezhetően alacsonyabb.”</p>
-        <div class="testi-foot">
-          <div class="avatar" aria-hidden="true">EH</div>
-          <div class="who">
-            <div class="n">Horváth Eszter</div>
-            <div class="r">Tulajdonos · Halászkert Szeged</div>
-          </div>
-          <span class="verified">Igazolt pilot</span>
-        </div>
-      </article>
+    <div class="stat">
+      <div class="num">40–60%</div>
+      <div class="lbl">Kevesebb olaj-vásárlás</div>
     </div>
-    <p class="testi-note">Szívesen szerepelne a következő számban a saját tapasztalataival? Válaszoljon erre az e-mail-re!</p>
+    <div class="stat">
+      <div class="num">2–3 mp</div>
+      <div class="lbl">Egy mérés ideje</div>
+    </div>
   </section>
 
   <section class="science">
@@ -487,14 +746,9 @@ minden, ami hatékonyabbá és kiszámíthatóbbá teszi az Ön konyhájának m�
     <p>A felhevített, majd újra és újra felhasznált sütőolajban idővel felhalmozódnak az úgynevezett poláris vegyületek, amelyek az oxidáció egyértelmű kémiai jelei. Európa-szerte a legtöbb szabályozás körülbelül 24%-os TPC-szintnél húzza meg a határt – ezen a ponton az olaj már nem tekinthető megfelelőnek az élelmiszer-készítéshez.</p>
     <p>E határérték felett a többször hevített olajban aldehidek is felhalmozódnak, köztük a 4-HNE, amelyet az ellenőrzött tudományos kutatások az oxidatív stresszel és a krónikus gyulladásokkal hoznak összefüggésbe. Ez már nem csupán minőségi kérdés, hanem egészségügyi problémát is jelent.</p>
     <div class="callout">
-      <p><p class="MsoNormal"><i>„A Beyond Oil használatával a biztonságos
-polárisvegyület-tartomány közel négyszer hosszabb ideig fenntartható – vagyis
-ugyanabban a fritőzben az&nbsp;</i>olaj minősége jóval tovább a szabályozási küszöbérték alatt marad.</p></p>
+      <p><i>„A Beyond Oil használatával a biztonságos polárisvegyület-tartomány közel négyszer hosszabb ideig fenntartható – vagyis ugyanabban a fritőzben az olaj minősége jóval tovább a szabályozási küszöbérték alatt marad."</i></p>
     </div>
-    <p><p class="MsoNormal"><i>A különbséget a tányérra kerülő ételekben is érezni fogja
-a vendég: ropogósabb állag, világosabb szín, tisztább ízélmény. Azok számára pedig,
-akik nap mint nap a konyhában dolgoznak a technológia kevesebb olajcserét, kevesebb füstöt és
-mérhetően jobb levegőminőséget jelent.</i><o:p></o:p></p></p>
+    <p><i>A különbséget a tányérra kerülő ételekben is érezni fogja a vendég: ropogósabb állag, világosabb szín, tisztább ízélmény. Azok számára pedig, akik nap mint nap a konyhában dolgoznak, a technológia kevesebb olajcserét, kevesebb füstöt és mérhetően jobb levegőminőséget jelent.</i></p>
     <div class="profs">
       <div class="prof">
         <div class="ava">OF</div>
@@ -512,15 +766,18 @@ mérhetően jobb levegőminőséget jelent.</i><o:p></o:p></p></p>
         <div class="ins">Bnei Zion Orvosi Központ</div>
       </div>
     </div>
-    <p class="src">Forrás: ELLENŐRZÖTT szakirodalom · Beyond Oil tudományos tanácsadó testület</p>
+    <p class="src">Forrás: Szakirodalom · Beyond Oil tudományos tanácsadó testület</p>
+  </section>
+
+  <section class="hero-image">
+    <img src="assets/low-hero.png" alt="Beyond Oil Filter Powder - Professional Kitchen" style="width: 100%; display: block; height: auto;">
   </section>
 
   <section class="cta">
     <p class="eyebrow">Próbálja ki a saját éttermében!</p>
     <h2>Nézze meg, hogyan működik az Ön konyhájában!</h2>
     <p class="sub">
-      30 napos, kockázatmentes próbaidőszak. Mi szállítunk, betanítjuk a csapatát és közösen mérjük
-      az eredményeket — az olaj aktív használati napjait, a TPC-értéket, a terítékenkénti olajköltséget.
+      30 napos, kockázatmentes próbaidőszak. Mi szállítunk, betanítjuk a csapatát és közösen mérjük az eredményeket — az olaj aktív használati napjait, a TPC-értéket, a terítékenkénti olajköltséget.
     </p>
     <div class="btn-row">
       <a class="btn btn-primary" href="#">Érdekel a 30 napos próbaidőszak →</a>
@@ -529,180 +786,48 @@ mérhetően jobb levegőminőséget jelent.</i><o:p></o:p></p></p>
     <p class="cta-note">Kockázatmentes. Ha nem lát mérhető megtakarítást, nem kell hosszú távon elköteleződnie.</p>
   </section>
 
-  <section class="next">
-    <div class="next-label">A következő számban</div>
-    <div class="next-row">
-      <div class="next-date">
-        <div class="m">Jún. 4.</div>
-        <div class="y">2026</div>
-      </div>
-      <div class="vrule"></div>
-      <div class="next-body">
-        <p class="t">Terítéken a nyári csúcsidőszak</p>
-        <p class="d">Teraszszezon, intenzívebb konyhai igénybevétel és egy nyomtatható ROI-kalkulátor,
-          amelyet 10 perc alatt lefuttathat a pénzügyi csapatával.</p>
-      </div>
-      <span class="tag-roi">ROI</span>
-    </div>
-  </section>
-
   <footer class="footer">
-    <img class="logo" src="assets/logo-white.png" alt="Beyond Oil">
-    <div class="footer-links">
-      <a href="#">Weboldal</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">Kapcsolat</a>
-      <a href="#">Sajtó</a>
+    <img class="footer-logo" src="assets/logo-white.png" alt="Beyond Oil">
+
+    <div class="social-icons">
+      <a href="https://www.thinkbeyond.hu" title="Weboldal" aria-label="Weboldal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 6v6m-4-4h8M8 14h8"></path>
+        </svg>
+      </a>
+      <a href="#" title="LinkedIn" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
+      <a href="#" title="Facebook" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+      </a>
+      <a href="#" title="Instagram" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+        </svg>
+      </a>
     </div>
+
+    <div class="footer-links">
+      <a href="https://www.thinkbeyond.hu">Weboldal</a>
+      <a href="https://www.thinkbeyond.hu/contact">Kapcsolat</a>
+    </div>
+
     <hr>
+
     <div class="footer-bottom">
-      <div>© 2026 ThinkBeyond Hungary / Beyond Oil.<br>Kezeli: DOUPLA Creative &amp; Digital.</div>
-      <div class="right">
-        <a href="#">Leiratkozás</a> · <a href="#">Adatvédelmi irányelvek</a>
-      </div>
+      <div>© 2026 ThinkBeyond Hungary / Beyond Oil.<br>Kezeli: DOUPLA Creative & Digital.</div>
     </div>
   </footer>
 
 </main>
-<!-- ===================== /NEWSLETTER ===================== -->
 
-
-<!-- ===================== EDITOR BAR ===================== -->
-
-<!-- ===================== /EDITOR BAR ===================== -->
-
-
-<script>
-// ─── Editable selectors ───────────────────────────────────────────────────────
-const EDITABLE = [
-  // Preheader
-  '.preheader > span:first-child',
-  // Header
-  '.pill-launch',
-  '.header-body .eyebrow',
-  '.headline',           // contains .alt span — both edit together, browser handles it fine
-  '.meta > span:not(.dot)',
-  // Rafi
-  '.video-label',
-  '.duration',
-  '.rafi-name',
-  '.rafi-role',
-  '.rafi-text',
-  '.chip-outline',
-  // Product
-  '.product .eyebrow',
-  '.product h2',
-  '.product .sub',
-  '.bullets li',
-  // Stats
-  '.stat .num',
-  '.stat .lbl',
-  // Testimonials
-  '.testi-hero-text .eyebrow',
-  '.testi-hero-text h2',
-  '.quote',
-  '.detail',
-  '.testi-foot .who .n',
-  '.testi-foot .who .r',
-  '.verified',
-  '.testi-note',
-  // Science
-  '.science .eyebrow',
-  '.science h2',
-  '.science > p',
-  '.callout p',
-  '.prof .nm',
-  '.prof .ins',
-  '.src',
-  // CTA
-  '.cta .eyebrow',
-  '.cta h2',
-  '.cta .sub',
-  '.btn-primary',
-  '.btn-outline',
-  '.cta-note',
-  // Next issue
-  '.next-label',
-  '.next-date .m',
-  '.next-date .y',
-  '.next-body .t',
-  '.next-body .d',
-  '.tag-roi',
-  // Footer
-  '.footer-bottom > div:first-child',
-];
-
-// ─── Original content snapshot for reset ─────────────────────────────────────
-const originals = new Map();
-
-function init() {
-  EDITABLE.forEach(selector => {
-    document.querySelectorAll(selector).forEach(el => {
-      el.setAttribute('contenteditable', 'true');
-      el.setAttribute('spellcheck', 'true');
-      originals.set(el, el.innerHTML);
-
-      // Prevent Enter from creating <div> blocks — keep it clean
-      el.addEventListener('keydown', e => {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          document.execCommand('insertLineBreak');
-        }
-      });
-    });
-  });
-}
-
-// ─── Save: produces clean index.html ─────────────────────────────────────────
-function saveHTML() {
-  const clone = document.documentElement.cloneNode(true);
-
-  // Remove editor bar
-  clone.querySelector('#editor-bar')?.remove();
-
-  // Remove editor styles
-  clone.querySelector('#editor-styles')?.remove();
-
-  // Remove contenteditable + spellcheck attributes
-  clone.querySelectorAll('[contenteditable]').forEach(el => {
-    el.removeAttribute('contenteditable');
-    el.removeAttribute('spellcheck');
-  });
-
-  // Fix lang + title
-  clone.setAttribute('lang', 'hu');
-  const titleEl = clone.querySelector('title');
-  if (titleEl) titleEl.textContent = 'Beyond Oil — Nyitószám · 2026. május';
-
-  // Trim extra body padding added for editor bar
-  const bodyEl = clone.querySelector('body');
-  if (bodyEl) bodyEl.style.paddingBottom = '';
-
-  const html = '<!doctype html>\n' + clone.outerHTML;
-  const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'index.html';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(a.href);
-
-  // Show saved badge
-  const badge = document.getElementById('saved-badge');
-  badge.classList.add('visible');
-  setTimeout(() => badge.classList.remove('visible'), 2500);
-}
-
-// ─── Reset: restore all originals ────────────────────────────────────────────
-function resetContent() {
-  if (!confirm('Visszaállítja az összes szöveget az eredeti verzióra?')) return;
-  originals.forEach((html, el) => { el.innerHTML = html; });
-}
-
-// ─── Boot ─────────────────────────────────────────────────────────────────────
-init();
-</script>
-
-
-</body></html>
+</body>
+</html>
